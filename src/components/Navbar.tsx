@@ -19,19 +19,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* LEFT: PROMINENT BRAND & LOGO */}
-          <a href="#" className="flex items-center gap-3 shrink-0 group py-1">
-            <Logo className="w-12 h-12 text-blue-600 transition-transform group-hover:scale-105 shrink-0" />
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-extrabold tracking-tight text-slate-900 font-sans">
-                  Tech<span className="text-blue-600">Medini</span>
-                </span>
-                <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200/80 font-mono">
-                  techmedini.in
-                </span>
-              </div>
-              <span className="text-xs text-slate-500 font-medium -mt-0.5">
+          {/* LEFT: PROMINENT BRAND LOGO (ICON + STACKED TECH MEDINI TEXT) */}
+          <a href="#" className="flex items-center gap-3.5 shrink-0 group py-1">
+            <Logo className="w-11 h-11 text-[#1E5285] transition-transform group-hover:scale-105 shrink-0" />
+            <div className="hidden sm:flex flex-col justify-center border-l border-slate-200 pl-3 py-0.5">
+              <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200/80 font-mono w-fit">
+                techmedini.in
+              </span>
+              <span className="text-[11px] text-slate-500 font-medium mt-0.5 whitespace-nowrap">
                 Data Center & Business Solutions
               </span>
             </div>
