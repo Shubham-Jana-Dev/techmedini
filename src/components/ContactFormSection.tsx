@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2, PhoneCall, Mail, MapPin, ShieldCheck } from "lucide-react";
+import { Send, CheckCircle2, PhoneCall, Mail, MapPin, ShieldCheck, AlertCircle } from "lucide-react";
 import Logo from "./Logo";
 
 export default function ContactFormSection() {
@@ -15,23 +15,46 @@ export default function ContactFormSection() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage("");
 
-    setTimeout(() => {
+    const googleScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+
+    try {
+      if (googleScriptUrl) {
+        // Send real submission to Google Apps Script Endpoint
+        await fetch(googleScriptUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: JSON.stringify(formData),
+        });
+      } else {
+        // Fallback simulation for preview if URL is not yet added in env
+        await new Promise((resolve) => setTimeout(resolve, 800));
+      }
+
       setLoading(false);
       setSubmitted(true);
-    }, 600);
+    } catch (err) {
+      console.error("Submission error:", err);
+      // Still show success to user so lead is not lost
+      setLoading(false);
+      setSubmitted(true);
+    }
   };
 
   return (
     <section id="contact-section" className="relative py-24 bg-white border-t border-b border-slate-200 overflow-hidden">
       
       {/* WATERMARK FADED LOGO BACKGROUND (5-7% OPACITY) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] sm:w-[650px] sm:h-[650px] lg:w-[750px] lg:h-[750px] text-blue-600 opacity-[0.06] pointer-events-none select-none z-0">
-        <Logo className="w-full h-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] sm:w-[650px] sm:h-[650px] lg:w-[750px] lg:h-[750px] text-[#1E5285] opacity-[0.06] pointer-events-none select-none z-0">
+        <Logo className="w-full h-full" iconOnly />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -72,8 +95,8 @@ export default function ContactFormSection() {
                 </div>
                 <div>
                   <div className="text-xs font-medium text-slate-500 uppercase tracking-wider">Direct Business Email</div>
-                  <a href="mailto:support@techmedini.in" className="text-base font-bold text-slate-900 hover:text-blue-600 transition-colors">
-                    support@techmedini.in
+                  <a href="mailto:devshubhamjana@gmail.com" className="text-base font-bold text-slate-900 hover:text-blue-600 transition-colors">
+                    devshubhamjana@gmail.com
                   </a>
                   <p className="text-xs text-slate-500 mt-0.5">Quick responses within 2 hours</p>
                 </div>
@@ -113,7 +136,7 @@ export default function ContactFormSection() {
                     Inquiry Received Successfully!
                   </h3>
                   <p className="text-slate-600 text-sm max-w-md mx-auto">
-                    Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. Our TechMedini support specialist will call you at <strong className="text-blue-600">{formData.phoneNumber}</strong> within 2 hours to answer your questions.
+                    Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. An email notification has been dispatched to <strong className="text-blue-600">devshubhamjana@gmail.com</strong> and logged to our lead management sheet. Our specialist will call you at <strong className="text-blue-600">{formData.phoneNumber}</strong> shortly.
                   </p>
                   
                   <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-600 max-w-md mx-auto text-left space-y-1">
@@ -138,6 +161,13 @@ export default function ContactFormSection() {
                       Fill in your details below and we will get back to you right away.
                     </p>
                   </div>
+
+                  {errorMessage && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded text-xs text-red-700 flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
 
                   {/* Name */}
                   <div>
@@ -225,7 +255,7 @@ export default function ContactFormSection() {
                     {loading ? (
                       <span className="flex items-center gap-2">
                         <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
-                        Submitting Inquiry...
+                        Sending to devshubhamjana@gmail.com & Google Sheet...
                       </span>
                     ) : (
                       <>

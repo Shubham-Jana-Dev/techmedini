@@ -26,13 +26,13 @@ export default function HostingPillars() {
           </p>
         </div>
 
-        {/* 3 CORE SERVICE CARDS */}
+        {/* 3 CORE SERVICE CARDS (WITH HOVER SCALE & SHADOW) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* CARD 1: SCHOOL ERP HOSTING */}
-          <div id="school-erp" className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 hover:shadow-lg hover:border-blue-300 transition-all flex flex-col justify-between space-y-6">
+          <div id="school-erp" className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-900/10 hover:border-blue-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold shadow-md">
+              <div className="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold shadow-md transition-transform group-hover:scale-110">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">
@@ -61,7 +61,7 @@ export default function HostingPillars() {
             <div className="pt-4 border-t border-slate-200">
               <button
                 onClick={scrollToContact}
-                className="w-full py-2.5 text-xs font-semibold text-blue-700 bg-white hover:bg-blue-50 border border-blue-200 rounded-md transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 text-xs font-semibold text-blue-700 bg-white hover:bg-blue-600 hover:text-white border border-blue-200 rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs"
               >
                 Inquire About School ERP Hosting
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -70,9 +70,9 @@ export default function HostingPillars() {
           </div>
 
           {/* CARD 2: RESTAURANT POS & BILLING */}
-          <div id="restaurant-pos" className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 hover:shadow-lg hover:border-blue-300 transition-all flex flex-col justify-between space-y-6">
+          <div id="restaurant-pos" className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-900/10 hover:border-emerald-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold shadow-md">
+              <div className="w-12 h-12 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold shadow-md transition-transform group-hover:scale-110">
                 <UtensilsCrossed className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">
@@ -101,7 +101,7 @@ export default function HostingPillars() {
             <div className="pt-4 border-t border-slate-200">
               <button
                 onClick={scrollToContact}
-                className="w-full py-2.5 text-xs font-semibold text-emerald-700 bg-white hover:bg-emerald-50 border border-emerald-200 rounded-md transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 text-xs font-semibold text-emerald-700 bg-white hover:bg-emerald-600 hover:text-white border border-emerald-200 rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs"
               >
                 Inquire About Restaurant POS
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -110,9 +110,9 @@ export default function HostingPillars() {
           </div>
 
           {/* CARD 3: SMALL BUSINESS ERP */}
-          <div id="business-hosting" className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 hover:shadow-lg hover:border-blue-300 transition-all flex flex-col justify-between space-y-6">
+          <div id="business-hosting" className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-900/10 hover:border-purple-300 flex flex-col justify-between space-y-6 group">
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold shadow-md">
+              <div className="w-12 h-12 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold shadow-md transition-transform group-hover:scale-110">
                 <Building2 className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">
@@ -141,7 +141,7 @@ export default function HostingPillars() {
             <div className="pt-4 border-t border-slate-200">
               <button
                 onClick={scrollToContact}
-                className="w-full py-2.5 text-xs font-semibold text-purple-700 bg-white hover:bg-purple-50 border border-purple-200 rounded-md transition-colors flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 text-xs font-semibold text-purple-700 bg-white hover:bg-purple-600 hover:text-white border border-purple-200 rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs"
               >
                 Inquire About Business ERP
                 <ArrowRight className="w-3.5 h-3.5" />

@@ -1,12 +1,24 @@
 "use client";
 
 import React from "react";
-import { Server, DollarSign, Wrench, PhoneCall, CheckCircle2, Shield } from "lucide-react";
+import { Server, DollarSign, Wrench, PhoneCall, CheckCircle2 } from "lucide-react";
+import { ServerRackGraphic } from "./Logo";
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="py-20 bg-slate-50 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-us" className="relative py-20 bg-slate-50 border-b border-slate-200 overflow-hidden">
+      
+      {/* LEFT FADING RACK MOUNT SERVER VISUAL */}
+      <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-[300px] h-[480px] lg:w-[360px] lg:h-[560px] text-[#1E5285] opacity-[0.07] pointer-events-none select-none z-0 hidden lg:block">
+        <ServerRackGraphic className="w-full h-full" />
+      </div>
+
+      {/* RIGHT FADING RACK MOUNT SERVER VISUAL */}
+      <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-[300px] h-[480px] lg:w-[360px] lg:h-[560px] text-[#1E5285] opacity-[0.07] pointer-events-none select-none z-0 hidden lg:block">
+        <ServerRackGraphic className="w-full h-full" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -21,12 +33,12 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        {/* 4 HIGHLIGHT CARDS */}
+        {/* 4 HIGHLIGHT CARDS (WITH HOVER SCALE & ELEVATED SHADOW) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           
           {/* HIGHLIGHT 1 */}
-          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+          <div className="bg-white/95 backdrop-blur-sm border border-slate-200 rounded-xl p-6 shadow-sm space-y-3 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-900/10 hover:border-blue-300 group">
+            <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold transition-transform group-hover:scale-110">
               <Server className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-900">
@@ -38,8 +50,8 @@ export default function WhyChooseUs() {
           </div>
 
           {/* HIGHLIGHT 2 */}
-          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+          <div className="bg-white/95 backdrop-blur-sm border border-slate-200 rounded-xl p-6 shadow-sm space-y-3 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-900/10 hover:border-blue-300 group">
+            <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold transition-transform group-hover:scale-110">
               <DollarSign className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-900">
@@ -51,8 +63,8 @@ export default function WhyChooseUs() {
           </div>
 
           {/* HIGHLIGHT 3 */}
-          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold">
+          <div className="bg-white/95 backdrop-blur-sm border border-slate-200 rounded-xl p-6 shadow-sm space-y-3 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-900/10 hover:border-blue-300 group">
+            <div className="w-10 h-10 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold transition-transform group-hover:scale-110">
               <Wrench className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-900">
@@ -64,8 +76,8 @@ export default function WhyChooseUs() {
           </div>
 
           {/* HIGHLIGHT 4 */}
-          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center font-bold">
+          <div className="bg-white/95 backdrop-blur-sm border border-slate-200 rounded-xl p-6 shadow-sm space-y-3 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-900/10 hover:border-blue-300 group">
+            <div className="w-10 h-10 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center font-bold transition-transform group-hover:scale-110">
               <PhoneCall className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-slate-900">
@@ -79,7 +91,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* SIMPLE TRUST COMPARISON BOX */}
-        <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+        <div className="bg-white/95 backdrop-blur-sm rounded-xl border border-slate-200 p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/5">
           <div className="text-center max-w-2xl mx-auto mb-8">
             <h3 className="text-xl font-bold text-slate-900">
               How TechMedini Compares to Overseas Cloud Hosts
@@ -92,7 +104,7 @@ export default function WhyChooseUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* OTHER OVERSEAS CLOUD */}
-            <div className="p-5 rounded-lg bg-red-50/50 border border-red-200 space-y-3 text-xs">
+            <div className="p-5 rounded-lg bg-red-50/50 border border-red-200 space-y-3 text-xs transition-all duration-300 hover:border-red-300">
               <div className="font-bold text-red-900 text-sm flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-red-500" />
                 Generic Overseas Cloud Providers
@@ -111,7 +123,7 @@ export default function WhyChooseUs() {
             </div>
 
             {/* TECHMEDINI */}
-            <div className="p-5 rounded-lg bg-emerald-50/60 border border-emerald-200 space-y-3 text-xs">
+            <div className="p-5 rounded-lg bg-emerald-50/60 border border-emerald-200 space-y-3 text-xs transition-all duration-300 hover:border-emerald-300 hover:shadow-md">
               <div className="font-bold text-emerald-900 text-sm flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 TechMedini Managed Indian Hosting

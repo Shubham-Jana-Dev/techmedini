@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Check, ArrowRight, ShieldCheck, HelpCircle } from "lucide-react";
+import { Check, ArrowRight, HelpCircle } from "lucide-react";
 
 export default function PricingSection() {
   const scrollToContact = () => {
@@ -26,11 +26,11 @@ export default function PricingSection() {
           </p>
         </div>
 
-        {/* 3 PRICING CARDS */}
+        {/* 3 PRICING CARDS (WITH HOVER SCALE & SHADOW) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* PLAN 1: SCHOOL ERP */}
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:shadow-lg transition-all">
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-900/10 hover:border-blue-300">
             <div className="space-y-4">
               <div className="inline-block px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-semibold text-xs">
                 FOR SCHOOLS & COLLEGES
@@ -76,7 +76,7 @@ export default function PricingSection() {
           </div>
 
           {/* PLAN 2: RESTAURANT POS (POPULAR) */}
-          <div className="bg-white border-2 border-blue-600 rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl relative">
+          <div className="bg-white border-2 border-blue-600 rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl relative transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.025] hover:shadow-2xl hover:shadow-blue-600/20">
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-blue-600 text-white font-bold text-[11px] uppercase tracking-wider shadow-sm">
               MOST POPULAR CHOICE
             </div>
@@ -126,7 +126,7 @@ export default function PricingSection() {
           </div>
 
           {/* PLAN 3: SMALL BUSINESS ERP */}
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:shadow-lg transition-all">
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-900/10 hover:border-purple-300">
             <div className="space-y-4">
               <div className="inline-block px-2.5 py-1 rounded bg-purple-100 text-purple-800 font-semibold text-xs">
                 FOR LOCAL BUSINESSES
@@ -174,7 +174,7 @@ export default function PricingSection() {
         </div>
 
         {/* CUSTOM REQUIREMENT NOTE */}
-        <div className="mt-12 p-4 rounded-lg bg-blue-50/70 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="mt-12 p-4 rounded-lg bg-blue-50/70 border border-blue-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs transition-all duration-300 hover:shadow-md hover:border-blue-300">
           <div className="flex items-center gap-3">
             <HelpCircle className="w-5 h-5 text-blue-600 shrink-0" />
             <span className="text-slate-700 font-medium">
