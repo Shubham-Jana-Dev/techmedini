@@ -24,17 +24,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-slate-50 border-b border-slate-200 py-16 md:py-24 overflow-hidden">
-      
-      {/* LEFT FADING RACK MOUNT SERVER BACKGROUND VISUAL */}
-      <div className="absolute -left-12 sm:-left-6 lg:left-4 top-1/2 -translate-y-1/2 w-[280px] h-[460px] lg:w-[380px] lg:h-[580px] text-[#1E5285] opacity-[0.10] pointer-events-none select-none z-0">
-        <ServerRackGraphic className="w-full h-full" />
-      </div>
-
-      {/* RIGHT FADING RACK MOUNT SERVER BACKGROUND VISUAL (SHIFTED FURTHER RIGHT FOR FULL VISIBILITY) */}
-      <div className="absolute -right-12 sm:-right-4 lg:right-4 top-1/2 -translate-y-1/2 w-[300px] h-[480px] lg:w-[440px] lg:h-[640px] text-[#1E5285] opacity-[0.11] pointer-events-none select-none z-0">
-        <ServerRackGraphic className="w-full h-full" />
-      </div>
+    <section className="relative bg-transparent border-b border-slate-200 py-16 md:py-24 overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

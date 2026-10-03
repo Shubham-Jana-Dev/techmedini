@@ -6,10 +6,10 @@ import Logo, { ServerRackGraphic } from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0f172a] border-t border-slate-800 text-slate-300 text-xs pt-16 pb-12 overflow-hidden">
+    <footer className="relative z-20 bg-[#0f172a] border-t border-slate-800 text-slate-300 text-xs pt-16 pb-12 overflow-hidden">
       
       {/* SUBTLE BACKGROUND WATERMARK */}
-      <div className="absolute right-6 lg:right-16 top-1/2 -translate-y-1/2 w-[320px] h-[500px] text-blue-400 opacity-[0.05] pointer-events-none select-none z-0 hidden lg:block">
+      <div className="absolute right-2 sm:right-6 lg:right-16 top-1/2 -translate-y-1/2 w-[140px] h-[230px] sm:w-[220px] sm:h-[360px] lg:w-[320px] lg:h-[500px] text-blue-400 opacity-[0.05] pointer-events-none select-none z-0">
         <ServerRackGraphic className="w-full h-full" />
       </div>
 
