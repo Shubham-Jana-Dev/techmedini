@@ -6,17 +6,7 @@ import { ServerRackGraphic } from "./Logo";
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="relative py-20 bg-slate-50 border-b border-slate-200 overflow-hidden">
-      
-      {/* LEFT FADING RACK MOUNT SERVER VISUAL */}
-      <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-[300px] h-[480px] lg:w-[360px] lg:h-[560px] text-[#1E5285] opacity-[0.07] pointer-events-none select-none z-0 hidden lg:block">
-        <ServerRackGraphic className="w-full h-full" />
-      </div>
-
-      {/* RIGHT FADING RACK MOUNT SERVER VISUAL */}
-      <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-[300px] h-[480px] lg:w-[360px] lg:h-[560px] text-[#1E5285] opacity-[0.07] pointer-events-none select-none z-0 hidden lg:block">
-        <ServerRackGraphic className="w-full h-full" />
-      </div>
+    <section id="why-us" className="relative py-20 bg-transparent border-b border-slate-200 overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
